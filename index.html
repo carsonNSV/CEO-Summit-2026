@@ -6,35 +6,26 @@
 <title>New Stack CEO Summit 2026 — Founder Directory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0e0e0e;
-    --off-white: #f5f3ee;
-    --warm-gray: #8c8880;
-    --border: rgba(14,14,14,0.12);
-    --border-strong: rgba(14,14,14,0.22);
-    --accent: #1a1a1a;
-    --tag-bg: #eeeae2;
-    --tag-active-bg: #0e0e0e;
-    --tag-active-color: #f5f3ee;
-    --chip-sector-bg: #e8e4db;
-    --chip-sector-color: #3d3830;
-    --chip-biz-bg: #dde8e2;
-    --chip-biz-color: #1f3d2e;
-    --chip-stage-bg: #e8e0d4;
-    --chip-stage-color: #3d2f1a;
+    --red: #E30613;
+    --dark: #2e2e2e;
+    --black: #1a1a1a;
+    --beige: #f5f3ee;
+    --beige-dark: #edeae3;
+    --warm-gray: #8a8680;
+    --border: rgba(26,26,26,0.1);
+    --border-strong: rgba(26,26,26,0.18);
     --card-bg: #ffffff;
-    --radius: 12px;
+    --radius: 11px;
   }
-
-  html { font-size: 16px; }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--off-white);
+    background: var(--beige);
     color: var(--black);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -42,76 +33,83 @@
 
   /* ── Header ── */
   .site-header {
-    padding: 3rem 2.5rem 2.5rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    background: var(--beige);
+    border-bottom: 2.5px solid var(--red);
+    padding: 2rem 2.5rem 1.75rem;
+  }
+
+  .header-inner {
     max-width: 1280px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   .header-top {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
-  .wordmark {
+  /* ── Logo ── */
+  .nsv-logo {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 11px;
   }
 
-  .wordmark-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--warm-gray);
-  }
-
-  .wordmark-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.1;
-    color: var(--black);
+  .nsv-wordmark {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
     font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dark);
   }
 
-  .wordmark-title em {
-    font-style: italic;
-    color: var(--warm-gray);
+  .nsv-wordmark strong { color: var(--red); font-weight: 500; }
+
+  /* ── Headline ── */
+  .header-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(38px, 5.5vw, 60px);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--black);
+    white-space: nowrap;
   }
 
-  .header-meta {
-    text-align: right;
+  .header-headline span { color: var(--red); }
+
+  .header-bottom {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
-  .header-meta p {
-    font-size: 12px;
-    color: var(--warm-gray);
-    line-height: 1.6;
-  }
-
-  .header-tagline {
-    font-size: 14px;
-    color: var(--warm-gray);
-    max-width: 520px;
-    line-height: 1.6;
+  .header-sub {
+    font-size: 13px;
     font-weight: 300;
+    color: var(--warm-gray);
+    line-height: 1.6;
+    max-width: 480px;
   }
 
   /* ── Controls ── */
   .controls-wrap {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 1.5rem 2.5rem 0;
+    padding: 1.4rem 2.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .85rem;
   }
 
   .controls-row {
@@ -121,134 +119,87 @@
     align-items: center;
   }
 
-  .search-wrap {
-    position: relative;
-    flex: 1;
-    min-width: 200px;
-  }
+  .search-wrap { position: relative; flex: 1; min-width: 200px; }
 
   .search-icon {
     position: absolute;
-    left: 12px;
-    top: 50%;
+    left: 11px; top: 50%;
     transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    stroke: var(--warm-gray);
-    stroke-width: 1.8;
-    fill: none;
+    width: 14px; height: 14px;
+    stroke: var(--warm-gray); stroke-width: 1.8; fill: none;
+    pointer-events: none;
   }
 
   input[type="text"] {
-    width: 100%;
-    height: 38px;
-    padding: 0 12px 0 36px;
+    width: 100%; height: 37px;
+    padding: 0 12px 0 34px;
     border: 1px solid var(--border-strong);
     border-radius: 8px;
     background: #fff;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    color: var(--black);
-    outline: none;
-    transition: border-color .15s;
+    font-size: 13px; color: var(--black);
+    outline: none; transition: border-color .15s;
   }
 
   input[type="text"]::placeholder { color: var(--warm-gray); }
-  input[type="text"]:focus { border-color: var(--black); }
+  input[type="text"]:focus { border-color: var(--red); }
 
   select {
-    height: 38px;
-    padding: 0 28px 0 12px;
+    height: 37px; padding: 0 28px 0 11px;
     border: 1px solid var(--border-strong);
-    border-radius: 8px;
-    background: #fff;
+    border-radius: 8px; background: #fff;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    color: var(--black);
-    outline: none;
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238c8880' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    font-size: 13px; color: var(--black);
+    outline: none; cursor: pointer; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8680' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 9px center;
     transition: border-color .15s;
   }
 
-  select:focus { border-color: var(--black); }
+  select:focus { border-color: var(--red); }
 
   .reset-btn {
-    height: 38px;
-    padding: 0 16px;
+    height: 37px; padding: 0 14px;
     border: 1px solid var(--border-strong);
-    border-radius: 8px;
-    background: transparent;
+    border-radius: 8px; background: transparent;
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    color: var(--warm-gray);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-    transition: all .15s;
+    font-size: 12px; color: var(--warm-gray);
+    cursor: pointer; display: flex; align-items: center; gap: 5px;
+    white-space: nowrap; transition: all .15s;
   }
 
-  .reset-btn:hover { border-color: var(--black); color: var(--black); }
+  .reset-btn:hover { border-color: var(--red); color: var(--red); }
 
-  /* ── Tag filters ── */
-  .tag-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
+  /* ── Tags ── */
+  .tag-row { display: flex; gap: 5px; flex-wrap: wrap; }
 
   .tag-btn {
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    padding: 5px 12px;
-    border-radius: 20px;
+    font-size: 11px; font-weight: 400;
+    padding: 4px 11px; border-radius: 20px;
     border: 1px solid var(--border-strong);
-    background: var(--tag-bg);
-    color: var(--warm-gray);
-    cursor: pointer;
-    transition: all .15s;
-    letter-spacing: 0.01em;
+    background: var(--beige-dark); color: var(--warm-gray);
+    cursor: pointer; transition: all .15s;
   }
 
-  .tag-btn:hover { border-color: var(--black); color: var(--black); }
-
-  .tag-btn.active {
-    background: var(--tag-active-bg);
-    border-color: var(--tag-active-bg);
-    color: var(--tag-active-color);
-  }
+  .tag-btn:hover { border-color: var(--red); color: var(--red); }
+  .tag-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
 
   /* ── Count ── */
   .results-meta {
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 1280px; margin: 0 auto;
     padding: 1rem 2.5rem 0;
-    font-size: 12px;
-    color: var(--warm-gray);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 12px; color: var(--warm-gray);
   }
-
-  .results-meta .divider { opacity: 0.4; }
 
   /* ── Grid ── */
-  .grid-wrap {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 1rem 2.5rem 4rem;
-  }
+  .grid-wrap { max-width: 1280px; margin: 0 auto; padding: 1rem 2.5rem 4rem; }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 11px;
   }
 
   /* ── Card ── */
@@ -256,181 +207,129 @@
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.1rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 1rem 1.1rem;
+    display: flex; flex-direction: column; gap: 9px;
     transition: border-color .2s, box-shadow .2s;
     animation: fadeUp .3s ease both;
   }
 
   .card:hover {
-    border-color: var(--border-strong);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border-color: var(--red);
+    box-shadow: 0 4px 18px rgba(227,6,19,0.07);
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(7px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .card-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .card-top { display: flex; align-items: center; gap: 10px; }
 
   .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 12px;
-    flex-shrink: 0;
-    font-family: 'Instrument Serif', serif;
-    font-size: 14px;
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 15px; flex-shrink: 0;
   }
 
   .card-identity { flex: 1; min-width: 0; }
 
   .card-name {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--black);
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 13.5px; font-weight: 500; color: var(--black);
+    line-height: 1.3; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
   }
 
   .card-co {
-    font-size: 11.5px;
-    color: var(--warm-gray);
-    margin-top: 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 11.5px; color: var(--warm-gray); margin-top: 1px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
 
   .card-oneliner {
-    font-size: 12px;
-    color: #555;
-    line-height: 1.55;
+    font-size: 12px; color: #555; line-height: 1.55;
     border-top: 1px solid var(--border);
-    padding-top: 10px;
-    font-weight: 300;
+    padding-top: 9px; font-weight: 300;
   }
 
-  .chips {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
+  .chips { display: flex; gap: 4px; flex-wrap: wrap; }
 
   .chip {
-    font-size: 10px;
-    font-weight: 400;
-    padding: 3px 8px;
-    border-radius: 20px;
-    cursor: pointer;
+    font-size: 10px; font-weight: 400;
+    padding: 3px 8px; border-radius: 20px;
     transition: opacity .15s;
-    letter-spacing: 0.01em;
   }
 
-  .chip:hover { opacity: .7; }
-  .chip-sector { background: var(--chip-sector-bg); color: var(--chip-sector-color); }
-  .chip-biz    { background: var(--chip-biz-bg);    color: var(--chip-biz-color); cursor: default; }
-  .chip-stage  { background: var(--chip-stage-bg);  color: var(--chip-stage-color); cursor: default; }
+  .chip-sector { background: #fce8e9; color: #8f0009; cursor: pointer; }
+  .chip-sector:hover { opacity: .7; }
+  .chip-biz    { background: #e8e4db; color: #3d3424; cursor: default; }
+  .chip-stage  { background: #e4e8ed; color: #1f2e3d; cursor: default; }
 
   .card-links {
-    display: flex;
-    gap: 10px;
-    padding-top: 8px;
-    border-top: 1px solid var(--border);
+    display: flex; gap: 10px;
+    padding-top: 8px; border-top: 1px solid var(--border);
   }
 
   .card-link {
-    font-size: 11px;
-    color: var(--warm-gray);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color .15s;
+    font-size: 11px; color: var(--warm-gray); text-decoration: none;
+    display: flex; align-items: center; gap: 4px; transition: color .15s;
   }
 
-  .card-link:hover { color: var(--black); }
+  .card-link:hover { color: var(--red); }
+  .card-link svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.8; fill: none; flex-shrink: 0; }
 
-  .card-link svg {
-    width: 12px;
-    height: 12px;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    fill: none;
-    flex-shrink: 0;
-  }
-
-  /* ── Empty state ── */
-  .empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--warm-gray);
-  }
-
+  /* ── Empty ── */
+  .empty { grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--warm-gray); }
   .empty p { font-size: 14px; margin-top: 8px; }
 
   /* ── Footer ── */
   .site-footer {
     border-top: 1px solid var(--border);
-    padding: 1.5rem 2.5rem;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
+    padding: 1.25rem 2.5rem;
+    display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 8px;
   }
 
-  .site-footer p {
-    font-size: 11px;
-    color: var(--warm-gray);
-  }
+  .site-footer p { font-size: 11px; color: var(--warm-gray); }
+  .footer-dot { color: var(--red); margin: 0 5px; }
 
   /* ── Mobile ── */
-  @media (max-width: 600px) {
-    .site-header, .controls-wrap, .grid-wrap, .results-meta, .site-footer {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
-    }
-    .header-meta { display: none; }
+  @media (max-width: 640px) {
+    .site-header { padding: 1.5rem 1.25rem 1.25rem; }
+    .header-sub { display: none; }
+    .controls-wrap, .grid-wrap, .results-meta { padding-left: 1.25rem; padding-right: 1.25rem; }
     .grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .wordmark-title { font-size: 26px; }
+    .site-footer { padding: 1rem 1.25rem; }
+    .header-headline { font-size: 32px; }
   }
 
-  @media (max-width: 400px) {
-    .grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="header-top">
-    <div class="wordmark">
-      <span class="wordmark-label">New Stack Ventures</span>
-      <h1 class="wordmark-title">CEO Summit <em>2026</em></h1>
+  <div class="header-inner">
+    <div class="header-top">
+
+      <!-- Logo: 5 left-aligned bars, shortest top, longest bottom (staircase down) -->
+      <div class="nsv-logo">
+        <svg width="38" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="New Stack Ventures">
+          <rect x="4"  y="0"    width="26" height="4.8" fill="#E30613"/>
+          <rect x="0"  y="6.3"  width="26" height="4.8" fill="#E30613"/>
+          <rect x="8"  y="12.6" width="26" height="4.8" fill="#E30613"/>
+          <rect x="0"  y="18.9" width="26" height="4.8" fill="#E30613"/>
+          <rect x="4"  y="25.2" width="26" height="4.8" fill="#E30613"/>
+        </svg>
+        <div class="nsv-wordmark"><strong>NEW</strong> STACK VENTURES</div>
+      </div>
+
+      <p class="header-sub">Browse your fellow founders, then head back to the form to select who you'd like to connect with.</p>
     </div>
-    <div class="header-meta">
-      <p>28 founders · Chicago, IL</p>
-      <p>Review before selecting who<br>you'd like to connect with</p>
+
+    <div class="header-bottom">
+      <h1 class="header-headline">CEO Summit <span>2026</span></h1>
     </div>
   </div>
-  <p class="header-tagline">Browse your fellow founders. Click a sector tag to filter, or search by name, company, or keyword.</p>
 </header>
 
 <div class="controls-wrap">
@@ -441,15 +340,11 @@
     </div>
     <select id="biz" onchange="render()">
       <option value="">All business types</option>
-      <option>B2B</option>
-      <option>B2C</option>
-      <option>B2B2C</option>
+      <option>B2B</option><option>B2C</option><option>B2B2C</option>
     </select>
     <select id="stage" onchange="render()">
       <option value="">All stages</option>
-      <option>Pre-seed</option>
-      <option>Seed</option>
-      <option>Series A</option>
+      <option>Pre-seed</option><option>Seed</option><option>Series A</option>
     </select>
     <button class="reset-btn" onclick="resetAll()">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -459,16 +354,14 @@
   <div class="tag-row" id="tag-row"></div>
 </div>
 
-<div class="results-meta">
-  <span id="count"></span>
-</div>
+<div class="results-meta"><span id="count"></span></div>
 
 <div class="grid-wrap">
   <div class="grid" id="grid"></div>
 </div>
 
 <footer class="site-footer">
-  <p>New Stack Ventures · CEO Summit 2026</p>
+  <p>New Stack Ventures<span class="footer-dot">·</span>CEO Summit 2026</p>
   <p>Confidential — for attendees only</p>
 </footer>
 
@@ -506,7 +399,7 @@ const RAW = [
   {name:"David Rogove",company:"Maestro",url:"https://www.maestrotech.ai",li:"https://www.linkedin.com/in/davidrogove/",oneliner:"AI infrastructure platform for mortgage brokerages.",hq:"Miami, FL",stage:"Pre-seed",rawSectors:["AI / ML","FinTech","Automation"],biz:"B2B"},
   {name:"Greg Floyd",company:"ShowerStream",url:"https://showerstream.net",li:"https://www.linkedin.com/in/gregbrownfloyd/",oneliner:"Smart shower head adapter that reduces water waste.",hq:"Austin, TX",stage:"Pre-seed",rawSectors:["Climate / Sustainability","IoT / HaaS","Hospitality"],biz:"B2B"},
   {name:"Chris Harper",company:"ZippedScript",url:"https://www.zippedscript.com",li:"https://www.linkedin.com/in/chris-harper-217426151/",oneliner:"Education and credential verification platform for employers.",hq:"Toronto, CA",stage:"Seed",rawSectors:["HRTech","SaaS","API"],biz:"B2B, B2C"},
-  {name:"Ian Seiferling",company:"AdaViv",url:"https://www.adaviv.com",li:"https://www.linkedin.com/in/isseiferling/",oneliner:"Computer vision platform detecting pests and disease for indoor agriculture.",hq:"Boston, MA",stage:"Seed",rawSectors:["AgTech / FoodTech","AI / ML","IoT / HaaS"],biz:"B2B"},
+  {name:"Ian Seiferling",company:"AdaViv",url:"https://www.adaviv.com",li:"https://www.linkedin.com/in/isseiferling/",oneliner:"Computer vision detecting pests and disease for indoor agriculture.",hq:"Boston, MA",stage:"Seed",rawSectors:["AgTech / FoodTech","AI / ML","IoT / HaaS"],biz:"B2B"},
   {name:"Joe White",company:"Send-it",url:"https://www.sendithc.com",li:"https://www.linkedin.com/in/josephwhite90/",oneliner:"Marketplace connecting clinicians with health organizations for staffing.",hq:"Nashville, TN",stage:"Pre-seed",rawSectors:["Health & Life Sciences","Marketplace","SaaS"],biz:"B2B"},
   {name:"John Hill",company:"Quorus",url:"https://www.quorus.io",li:"https://www.linkedin.com/in/john-hill-cfa-566a3b20/",oneliner:"Platform for RIAs to create direct indexes.",hq:"Fairfield, CT",stage:"Seed",rawSectors:["WealthTech","FinTech","SaaS"],biz:"B2B"},
   {name:"Jude Chiy",company:"Flamingo",url:"https://getflamingo.com",li:"https://www.linkedin.com/in/judechiy/",oneliner:"Free all-in-one resident engagement platform for multifamily housing.",hq:"Chicago, IL",stage:"Seed",rawSectors:["PropTech","Marketplace","SaaS"],biz:"B2B"},
@@ -530,10 +423,10 @@ const RAW = [
 RAW.forEach(c => { c.sectors = mapSectors(c.rawSectors); });
 
 const AVATAR_COLORS = [
-  {bg:"#ede9e0",color:"#3d3424"},{bg:"#dde8e2",color:"#1f3d2e"},
-  {bg:"#e8dede",color:"#3d1f1f"},{bg:"#dde2e8",color:"#1f2e3d"},
-  {bg:"#e8e4d8",color:"#3d3424"},{bg:"#e0e8dd",color:"#243d22"},
-  {bg:"#e8e0d4",color:"#3d2f1a"},
+  {bg:"#fce8e9",color:"#8f0009"},{bg:"#e8e4db",color:"#3d3424"},
+  {bg:"#dde2e8",color:"#1f2e3d"},{bg:"#e0e8dd",color:"#1f3d22"},
+  {bg:"#e8e0d4",color:"#3d2f1a"},{bg:"#dde8e4",color:"#1f3d35"},
+  {bg:"#e8dede",color:"#3d1f1f"},
 ];
 
 function colorFor(n) {
@@ -562,8 +455,7 @@ function buildTags() {
 
 function toggleTag(t) {
   activeTag = activeTag === t ? "" : t;
-  buildTags();
-  render();
+  buildTags(); render();
 }
 
 function resetAll() {
@@ -571,36 +463,34 @@ function resetAll() {
   document.getElementById("biz").value = "";
   document.getElementById("stage").value = "";
   activeTag = "";
-  buildTags();
-  render();
+  buildTags(); render();
 }
 
-const LI_ICON = `<svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>`;
+const LI_ICON  = `<svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>`;
 const EXT_ICON = `<svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 
 function render() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const bizF = document.getElementById("biz").value;
+  const q      = document.getElementById("search").value.toLowerCase();
+  const bizF   = document.getElementById("biz").value;
   const stageF = document.getElementById("stage").value;
 
   const filtered = RAW.filter(c => {
     const matchQ = !q || c.name.toLowerCase().includes(q) || c.company.toLowerCase().includes(q) ||
       c.oneliner.toLowerCase().includes(q) || c.hq.toLowerCase().includes(q) ||
       c.sectors.some(s => s.toLowerCase().includes(q));
-    const matchB = !bizF || c.biz.includes(bizF);
+    const matchB = !bizF   || c.biz.includes(bizF);
     const matchS = !stageF || c.stage === stageF;
     const matchT = !activeTag || c.sectors.includes(activeTag);
     return matchQ && matchB && matchS && matchT;
   });
 
-  const total = RAW.length;
-  document.getElementById("count").textContent = `${filtered.length} of ${total} founders`;
+  document.getElementById("count").textContent = `${filtered.length} of ${RAW.length} founders`;
 
   const grid = document.getElementById("grid");
 
   if (!filtered.length) {
     grid.innerHTML = `<div class="empty">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8c8880" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8a8680" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
       <p>No matches — try resetting your filters</p>
     </div>`;
     return;
@@ -609,14 +499,13 @@ function render() {
   grid.innerHTML = filtered.map((c, i) => {
     const col = colorFor(c.name);
     const sectorChips = c.sectors.slice(0,2).map(s =>
-      `<span class="chip chip-sector" onclick="toggleTag('${s}')" title="Filter by ${s}">${s}</span>`
+      `<span class="chip chip-sector" onclick="toggleTag('${s}')">${s}</span>`
     ).join("");
     const bizChips = c.biz.split(",").map(b =>
       `<span class="chip chip-biz">${b.trim()}</span>`
     ).join("");
-    const stageChip = `<span class="chip chip-stage">${c.stage}</span>`;
 
-    return `<div class="card" style="animation-delay:${Math.min(i * 0.03, 0.4)}s">
+    return `<div class="card" style="animation-delay:${Math.min(i*0.03,0.45)}s">
       <div class="card-top">
         <div class="avatar" style="background:${col.bg};color:${col.color}">${initials(c.name)}</div>
         <div class="card-identity">
@@ -625,7 +514,7 @@ function render() {
         </div>
       </div>
       <div class="card-oneliner">${c.oneliner}</div>
-      <div class="chips">${sectorChips}${bizChips}${stageChip}</div>
+      <div class="chips">${sectorChips}${bizChips}<span class="chip chip-stage">${c.stage}</span></div>
       <div class="card-links">
         <a class="card-link" href="${c.li}" target="_blank" rel="noopener">${LI_ICON} LinkedIn</a>
         <a class="card-link" href="${c.url}" target="_blank" rel="noopener">${EXT_ICON} Website</a>
