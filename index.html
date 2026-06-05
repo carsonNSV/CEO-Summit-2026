@@ -240,8 +240,14 @@
     overflow: hidden; text-overflow: ellipsis;
   }
 
+  .card-company {
+    font-size: 13px; font-weight: 500; color: var(--red);
+    line-height: 1.3; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+
   .card-co {
-    font-size: 11.5px; color: var(--warm-gray); margin-top: 1px;
+    font-size: 11px; color: var(--warm-gray); margin-top: 1px;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
 
@@ -510,7 +516,8 @@ function render() {
         <div class="avatar" style="background:${col.bg};color:${col.color}">${initials(c.name)}</div>
         <div class="card-identity">
           <div class="card-name">${c.name}</div>
-          <div class="card-co">${c.company} &middot; ${c.hq}</div>
+          <div class="card-company">${c.company}</div>
+          <div class="card-co">${c.hq}</div>
         </div>
       </div>
       <div class="card-oneliner">${c.oneliner}</div>
