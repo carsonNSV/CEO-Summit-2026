@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Stack CEO Summit 2026 — Founder Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0e0e0e;
+    --off-white: #f5f3ee;
+    --warm-gray: #8c8880;
+    --border: rgba(14,14,14,0.12);
+    --border-strong: rgba(14,14,14,0.22);
+    --accent: #1a1a1a;
+    --tag-bg: #eeeae2;
+    --tag-active-bg: #0e0e0e;
+    --tag-active-color: #f5f3ee;
+    --chip-sector-bg: #e8e4db;
+    --chip-sector-color: #3d3830;
+    --chip-biz-bg: #dde8e2;
+    --chip-biz-color: #1f3d2e;
+    --chip-stage-bg: #e8e0d4;
+    --chip-stage-color: #3d2f1a;
+    --card-bg: #ffffff;
+    --radius: 12px;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--black);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    padding: 3rem 2.5rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .wordmark-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .wordmark-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    color: var(--black);
+    font-weight: 400;
+  }
+
+  .wordmark-title em {
+    font-style: italic;
+    color: var(--warm-gray);
+  }
+
+  .header-meta {
+    text-align: right;
+  }
+
+  .header-meta p {
+    font-size: 12px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  .header-tagline {
+    font-size: 14px;
+    color: var(--warm-gray);
+    max-width: 520px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── Controls ── */
+  .controls-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .controls-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    stroke: var(--warm-gray);
+    stroke-width: 1.8;
+    fill: none;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px 0 36px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--black);
+    outline: none;
+    transition: border-color .15s;
+  }
+
+  input[type="text"]::placeholder { color: var(--warm-gray); }
+  input[type="text"]:focus { border-color: var(--black); }
+
+  select {
+    height: 38px;
+    padding: 0 28px 0 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--black);
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238c8880' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color .15s;
+  }
+
+  select:focus { border-color: var(--black); }
+
+  .reset-btn {
+    height: 38px;
+    padding: 0 16px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--warm-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: all .15s;
+  }
+
+  .reset-btn:hover { border-color: var(--black); color: var(--black); }
+
+  /* ── Tag filters ── */
+  .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-strong);
+    background: var(--tag-bg);
+    color: var(--warm-gray);
+    cursor: pointer;
+    transition: all .15s;
+    letter-spacing: 0.01em;
+  }
+
+  .tag-btn:hover { border-color: var(--black); color: var(--black); }
+
+  .tag-btn.active {
+    background: var(--tag-active-bg);
+    border-color: var(--tag-active-bg);
+    color: var(--tag-active-color);
+  }
+
+  /* ── Count ── */
+  .results-meta {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 2.5rem 0;
+    font-size: 12px;
+    color: var(--warm-gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .results-meta .divider { opacity: 0.4; }
+
+  /* ── Grid ── */
+  .grid-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 2.5rem 4rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color .2s, box-shadow .2s;
+    animation: fadeUp .3s ease both;
+  }
+
+  .card:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 12px;
+    flex-shrink: 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 14px;
+  }
+
+  .card-identity { flex: 1; min-width: 0; }
+
+  .card-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--black);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-co {
+    font-size: 11.5px;
+    color: var(--warm-gray);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-oneliner {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.55;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    font-weight: 300;
+  }
+
+  .chips {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    font-size: 10px;
+    font-weight: 400;
+    padding: 3px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity .15s;
+    letter-spacing: 0.01em;
+  }
+
+  .chip:hover { opacity: .7; }
+  .chip-sector { background: var(--chip-sector-bg); color: var(--chip-sector-color); }
+  .chip-biz    { background: var(--chip-biz-bg);    color: var(--chip-biz-color); cursor: default; }
+  .chip-stage  { background: var(--chip-stage-bg);  color: var(--chip-stage-color); cursor: default; }
+
+  .card-links {
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .card-link {
+    font-size: 11px;
+    color: var(--warm-gray);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color .15s;
+  }
+
+  .card-link:hover { color: var(--black); }
+
+  .card-link svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  /* ── Empty state ── */
+  .empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--warm-gray);
+  }
+
+  .empty p { font-size: 14px; margin-top: 8px; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .site-footer p {
+    font-size: 11px;
+    color: var(--warm-gray);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .site-header, .controls-wrap, .grid-wrap, .results-meta, .site-footer {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    .header-meta { display: none; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .wordmark-title { font-size: 26px; }
+  }
+
+  @media (max-width: 400px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="wordmark">
+      <span class="wordmark-label">New Stack Ventures</span>
+      <h1 class="wordmark-title">CEO Summit <em>2026</em></h1>
+    </div>
+    <div class="header-meta">
+      <p>28 founders · Chicago, IL</p>
+      <p>Review before selecting who<br>you'd like to connect with</p>
+    </div>
+  </div>
+  <p class="header-tagline">Browse your fellow founders. Click a sector tag to filter, or search by name, company, or keyword.</p>
+</header>
+
+<div class="controls-wrap">
+  <div class="controls-row">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input type="text" id="search" placeholder="Search name, company, keyword…" oninput="render()" autocomplete="off" />
+    </div>
+    <select id="biz" onchange="render()">
+      <option value="">All business types</option>
+      <option>B2B</option>
+      <option>B2C</option>
+      <option>B2B2C</option>
+    </select>
+    <select id="stage" onchange="render()">
+      <option value="">All stages</option>
+      <option>Pre-seed</option>
+      <option>Seed</option>
+      <option>Series A</option>
+    </select>
+    <button class="reset-btn" onclick="resetAll()">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      Reset
+    </button>
+  </div>
+  <div class="tag-row" id="tag-row"></div>
+</div>
+
+<div class="results-meta">
+  <span id="count"></span>
+</div>
+
+<div class="grid-wrap">
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer class="site-footer">
+  <p>New Stack Ventures · CEO Summit 2026</p>
+  <p>Confidential — for attendees only</p>
+</footer>
+
+<script>
+const SECTOR_MAP = {
+  "AI / ML":"AI / ML","AI/ML":"AI / ML","Automation":"AI / ML","AI":"AI / ML",
+  "FinTech":"FinTech","WealthTech":"FinTech","Payments":"FinTech","Consumer Lending":"FinTech","BNPL":"FinTech","InsurTech":"FinTech","Mortgage":"FinTech","Embedded Fintech":"FinTech",
+  "SaaS":"SaaS","API":"SaaS","Data & Analytics":"SaaS",
+  "PropTech":"PropTech","Construction":"PropTech","Real Estate":"PropTech",
+  "Health & Life Sciences":"Health & Life Sciences","Digital Health":"Health & Life Sciences","Life Sciences":"Health & Life Sciences","Behavioral Health":"Health & Life Sciences","RPM":"Health & Life Sciences","Telehealth":"Health & Life Sciences",
+  "AgTech / FoodTech":"AgTech / FoodTech","AgTech":"AgTech / FoodTech","FoodTech":"AgTech / FoodTech","Farm-to-table":"AgTech / FoodTech",
+  "MarTech":"MarTech","Commerce":"MarTech","Video":"MarTech","Social Commerce":"MarTech","DTC":"MarTech","OOH Advertising":"MarTech",
+  "Marketplace":"Marketplace","eCommerce":"Marketplace","Supply Chain":"Marketplace",
+  "IoT / Hardware":"IoT / Hardware","IoT / HaaS":"IoT / Hardware","HaaS":"IoT / Hardware","IoT":"IoT / Hardware","Deep Tech":"IoT / Hardware",
+  "Climate & Sustainability":"Climate & Sustainability","Climate / Sustainability":"Climate & Sustainability","Water":"Climate & Sustainability",
+  "Future of Work":"Future of Work","HRTech":"Future of Work","Remote Work":"Future of Work",
+  "Travel & Mobility":"Travel & Mobility","Travel":"Travel & Mobility","Mobility":"Travel & Mobility","Automotive":"Travel & Mobility","Hospitality":"Travel & Mobility",
+};
+
+const BUCKET_ORDER = ["AI / ML","FinTech","SaaS","PropTech","Health & Life Sciences","AgTech / FoodTech","MarTech","Marketplace","IoT / Hardware","Future of Work","Climate & Sustainability","Travel & Mobility"];
+
+function mapSectors(raw) {
+  const seen = new Set(), out = [];
+  raw.forEach(r => { const b = SECTOR_MAP[r] || r; if (!seen.has(b)) { seen.add(b); out.push(b); } });
+  return out;
+}
+
+const RAW = [
+  {name:"Alex Segura",company:"Showdrop",url:"https://www.showdrop.com",li:"https://www.linkedin.com/in/alex-segura-16939b9/",oneliner:"Lets DTC brands enter physical retail 10x faster and cheaper.",hq:"Chicago, IL",stage:"Seed",rawSectors:["MarTech","Commerce","HaaS"],biz:"B2B, B2B2C"},
+  {name:"Andrew Penner",company:"Milo",url:"https://www.mymilo.ai",li:"https://www.linkedin.com/in/aepenner/",oneliner:"AI-powered mortgage monitoring for real estate lenders.",hq:"Hartford, CT",stage:"Pre-seed",rawSectors:["AI / ML","Mortgage","PropTech"],biz:"B2B"},
+  {name:"Bert Vandereydt",company:"Nammu",url:"https://www.nammu.ai",li:"https://www.linkedin.com/in/bertvandereydt/",oneliner:"AI platform helping food distributors boost profits and cut waste.",hq:"Boston, MA",stage:"Pre-seed",rawSectors:["AgTech / FoodTech","AI / ML","SaaS"],biz:"B2B"},
+  {name:"Bryan Wilcox",company:"RecordLens",url:"https://recordlens.com",li:"https://www.linkedin.com/in/bryanwilcox/",oneliner:"AI planning and operating system for infrastructure construction.",hq:"Valparaiso, IN",stage:"Pre-seed",rawSectors:["Construction","AI / ML","SaaS"],biz:"B2B"},
+  {name:"Dan Brunner",company:"Market Wagon",url:"https://www.marketwagon.com",li:"https://www.linkedin.com/in/brunnerdaniel/",oneliner:"Online farmers market connecting consumers with local producers.",hq:"Indianapolis, IN",stage:"Series A",rawSectors:["AgTech / FoodTech","Marketplace","eCommerce"],biz:"B2C, B2B2C"},
+  {name:"David García",company:"Digitt",url:"https://www.digitt.com",li:"https://www.linkedin.com/in/david-garc%C3%ADa-aceves-17a39477/",oneliner:"The SoFi of Latin America — lower-interest loans for prime borrowers.",hq:"Guadalajara, MX",stage:"Series A",rawSectors:["FinTech","Consumer Lending","BNPL"],biz:"B2B2C"},
+  {name:"David Rogove",company:"Maestro",url:"https://www.maestrotech.ai",li:"https://www.linkedin.com/in/davidrogove/",oneliner:"AI infrastructure platform for mortgage brokerages.",hq:"Miami, FL",stage:"Pre-seed",rawSectors:["AI / ML","FinTech","Automation"],biz:"B2B"},
+  {name:"Greg Floyd",company:"ShowerStream",url:"https://showerstream.net",li:"https://www.linkedin.com/in/gregbrownfloyd/",oneliner:"Smart shower head adapter that reduces water waste.",hq:"Austin, TX",stage:"Pre-seed",rawSectors:["Climate / Sustainability","IoT / HaaS","Hospitality"],biz:"B2B"},
+  {name:"Chris Harper",company:"ZippedScript",url:"https://www.zippedscript.com",li:"https://www.linkedin.com/in/chris-harper-217426151/",oneliner:"Education and credential verification platform for employers.",hq:"Toronto, CA",stage:"Seed",rawSectors:["HRTech","SaaS","API"],biz:"B2B, B2C"},
+  {name:"Ian Seiferling",company:"AdaViv",url:"https://www.adaviv.com",li:"https://www.linkedin.com/in/isseiferling/",oneliner:"Computer vision platform detecting pests and disease for indoor agriculture.",hq:"Boston, MA",stage:"Seed",rawSectors:["AgTech / FoodTech","AI / ML","IoT / HaaS"],biz:"B2B"},
+  {name:"Joe White",company:"Send-it",url:"https://www.sendithc.com",li:"https://www.linkedin.com/in/josephwhite90/",oneliner:"Marketplace connecting clinicians with health organizations for staffing.",hq:"Nashville, TN",stage:"Pre-seed",rawSectors:["Health & Life Sciences","Marketplace","SaaS"],biz:"B2B"},
+  {name:"John Hill",company:"Quorus",url:"https://www.quorus.io",li:"https://www.linkedin.com/in/john-hill-cfa-566a3b20/",oneliner:"Platform for RIAs to create direct indexes.",hq:"Fairfield, CT",stage:"Seed",rawSectors:["WealthTech","FinTech","SaaS"],biz:"B2B"},
+  {name:"Jude Chiy",company:"Flamingo",url:"https://getflamingo.com",li:"https://www.linkedin.com/in/judechiy/",oneliner:"Free all-in-one resident engagement platform for multifamily housing.",hq:"Chicago, IL",stage:"Seed",rawSectors:["PropTech","Marketplace","SaaS"],biz:"B2B"},
+  {name:"Konrad Waliszewski",company:"@hotel",url:"http://athotel.com",li:"https://www.linkedin.com/in/konradwaliszewski/",oneliner:"Book the best hotel rates directly from your social feeds.",hq:"Washington D.C.",stage:"Series A",rawSectors:["Travel","Social Commerce","eCommerce"],biz:"B2C"},
+  {name:"Mairon Sandoval",company:"OneCarNow",url:"https://onecarnow.com",li:"https://www.linkedin.com/in/mairon-sandoval-9260621b1/",oneliner:"Car subscription platform for gig workers in emerging markets.",hq:"Mexico City, MX",stage:"Series A",rawSectors:["FinTech","Automotive","Mobility"],biz:"B2C"},
+  {name:"Marian Pulford",company:"Kestrel Labs",url:"https://kestrellabs.com",li:"https://www.linkedin.com/in/marian-gottlieb-pulford/",oneliner:"AI-native building code compliance for architecture and construction.",hq:"Denver, CO",stage:"Pre-seed",rawSectors:["AI / ML","Construction","PropTech"],biz:"B2B"},
+  {name:"Mark Garcia",company:"Binsr",url:"https://www.binsrinspect.com",li:"https://www.linkedin.com/in/markgarcia01/",oneliner:"Hub for home services, starting with AI software for home inspectors.",hq:"Phoenix, AZ",stage:"Pre-seed",rawSectors:["AI / ML","PropTech","Marketplace"],biz:"B2B"},
+  {name:"Melissa Miao",company:"Tesorai",url:"https://www.tesorai.com",li:"https://www.linkedin.com/in/melissa-miao-975a79/",oneliner:"AI/ML infrastructure platform for drug discovery.",hq:"San Diego, CA",stage:"Seed",rawSectors:["AI / ML","Health & Life Sciences","SaaS"],biz:"B2B"},
+  {name:"Michael Hoffman",company:"Gather Voices",url:"https://www.gathervoices.co",li:"https://www.linkedin.com/in/michaelhoffman/",oneliner:"Video collection platform for testimonials, reviews, and user content.",hq:"Chicago, IL",stage:"Seed",rawSectors:["MarTech","Video","Commerce"],biz:"B2B"},
+  {name:"Mitchell Castetter",company:"BioReact",url:"https://www.bioreact.co",li:"https://www.linkedin.com/in/mitchell-j-castetter-12bab795/",oneliner:"Unified platform to acquire, manage, and analyze bioreactor data.",hq:"Indianapolis, IN",stage:"Pre-seed",rawSectors:["Health & Life Sciences","AI / ML","Data & Analytics"],biz:"B2B"},
+  {name:"MK Valley",company:"SparkServ",url:"https://www.sparkserv.com",li:"https://www.linkedin.com/in/mckennavalley/",oneliner:"AI-powered automation growing service revenue for auto dealerships.",hq:"Denver, CO",stage:"Seed",rawSectors:["AI / ML","Automation","SaaS"],biz:"B2B"},
+  {name:"Mohammed Al-arnawoot",company:"DraftAid",url:"https://draftaid.io",li:"https://www.linkedin.com/in/mohammed-al-arnawoot/",oneliner:"AI-native CAD platform — from 3D models to drawings instantly.",hq:"Toronto, CA",stage:"Seed",rawSectors:["AI / ML","Construction","Automation"],biz:"B2B"},
+  {name:"Quratul-Ann Malik",company:"Oscar",url:"https://www.oscar.ai",li:"https://www.linkedin.com/in/quratulannmalik/",oneliner:"AI-native labor and inventory management for restaurants.",hq:"Washington D.C.",stage:"Seed",rawSectors:["AI / ML","AgTech / FoodTech","SaaS"],biz:"B2B"},
+  {name:"Scott Cary",company:"Snug",url:"https://www.getsnug.com",li:"https://www.linkedin.com/in/scottecary/",oneliner:"White-label estate planning SaaS for financial professionals.",hq:"Denver, CO",stage:"Pre-seed",rawSectors:["WealthTech","FinTech","SaaS"],biz:"B2B, B2B2C"},
+  {name:"Seth Merritt",company:"Welby Health",url:"https://www.welby.care",li:"https://www.linkedin.com/in/seth-merritt/",oneliner:"Platform managing remote patient monitoring programs at scale.",hq:"San Diego, CA",stage:"Seed",rawSectors:["Health & Life Sciences","SaaS","Automation"],biz:"B2B, B2B2C"},
+  {name:"Trasy Lou Walsh",company:"Fluid",url:"https://www.gofluid.io",li:"https://www.linkedin.com/in/trasylw/",oneliner:"B2B payments enabling vendors to offer flexible payment terms.",hq:"Singapore",stage:"Seed",rawSectors:["FinTech","Payments","Supply Chain"],biz:"B2B"},
+  {name:"Vic Yeh",company:"Cara",url:"https://www.getcara.ai",li:"https://www.linkedin.com/in/vicyeh/",oneliner:"AI-powered software for insurance servicing professionals.",hq:"New York, NY",stage:"Seed",rawSectors:["InsurTech","AI / ML","FinTech"],biz:"B2B2C"},
+  {name:"William St-Pierre",company:"Mechasys",url:"https://mechasys.ca",li:"https://www.linkedin.com/in/william-st-pierre-840316b2/",oneliner:"Laser projector that displays construction plans at real scale.",hq:"Montreal, CA",stage:"Seed",rawSectors:["Construction","PropTech","IoT / HaaS"],biz:"B2B"},
+];
+
+RAW.forEach(c => { c.sectors = mapSectors(c.rawSectors); });
+
+const AVATAR_COLORS = [
+  {bg:"#ede9e0",color:"#3d3424"},{bg:"#dde8e2",color:"#1f3d2e"},
+  {bg:"#e8dede",color:"#3d1f1f"},{bg:"#dde2e8",color:"#1f2e3d"},
+  {bg:"#e8e4d8",color:"#3d3424"},{bg:"#e0e8dd",color:"#243d22"},
+  {bg:"#e8e0d4",color:"#3d2f1a"},
+];
+
+function colorFor(n) {
+  let h = 0;
+  for (let c of n) h = (h * 31 + c.charCodeAt(0)) % AVATAR_COLORS.length;
+  return AVATAR_COLORS[Math.abs(h) % AVATAR_COLORS.length];
+}
+
+function initials(n) {
+  return n.split(" ").filter(Boolean).slice(0,2).map(w => w[0]).join("").toUpperCase();
+}
+
+let activeTag = "";
+
+function allSectors() {
+  const s = new Set();
+  RAW.forEach(c => c.sectors.forEach(x => s.add(x)));
+  return BUCKET_ORDER.filter(x => s.has(x));
+}
+
+function buildTags() {
+  document.getElementById("tag-row").innerHTML = allSectors().map(s =>
+    `<button class="tag-btn${activeTag === s ? ' active' : ''}" onclick="toggleTag('${s}')">${s}</button>`
+  ).join("");
+}
+
+function toggleTag(t) {
+  activeTag = activeTag === t ? "" : t;
+  buildTags();
+  render();
+}
+
+function resetAll() {
+  document.getElementById("search").value = "";
+  document.getElementById("biz").value = "";
+  document.getElementById("stage").value = "";
+  activeTag = "";
+  buildTags();
+  render();
+}
+
+const LI_ICON = `<svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>`;
+const EXT_ICON = `<svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+function render() {
+  const q = document.getElementById("search").value.toLowerCase();
+  const bizF = document.getElementById("biz").value;
+  const stageF = document.getElementById("stage").value;
+
+  const filtered = RAW.filter(c => {
+    const matchQ = !q || c.name.toLowerCase().includes(q) || c.company.toLowerCase().includes(q) ||
+      c.oneliner.toLowerCase().includes(q) || c.hq.toLowerCase().includes(q) ||
+      c.sectors.some(s => s.toLowerCase().includes(q));
+    const matchB = !bizF || c.biz.includes(bizF);
+    const matchS = !stageF || c.stage === stageF;
+    const matchT = !activeTag || c.sectors.includes(activeTag);
+    return matchQ && matchB && matchS && matchT;
+  });
+
+  const total = RAW.length;
+  document.getElementById("count").textContent = `${filtered.length} of ${total} founders`;
+
+  const grid = document.getElementById("grid");
+
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="empty">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8c8880" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <p>No matches — try resetting your filters</p>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((c, i) => {
+    const col = colorFor(c.name);
+    const sectorChips = c.sectors.slice(0,2).map(s =>
+      `<span class="chip chip-sector" onclick="toggleTag('${s}')" title="Filter by ${s}">${s}</span>`
+    ).join("");
+    const bizChips = c.biz.split(",").map(b =>
+      `<span class="chip chip-biz">${b.trim()}</span>`
+    ).join("");
+    const stageChip = `<span class="chip chip-stage">${c.stage}</span>`;
+
+    return `<div class="card" style="animation-delay:${Math.min(i * 0.03, 0.4)}s">
+      <div class="card-top">
+        <div class="avatar" style="background:${col.bg};color:${col.color}">${initials(c.name)}</div>
+        <div class="card-identity">
+          <div class="card-name">${c.name}</div>
+          <div class="card-co">${c.company} &middot; ${c.hq}</div>
+        </div>
+      </div>
+      <div class="card-oneliner">${c.oneliner}</div>
+      <div class="chips">${sectorChips}${bizChips}${stageChip}</div>
+      <div class="card-links">
+        <a class="card-link" href="${c.li}" target="_blank" rel="noopener">${LI_ICON} LinkedIn</a>
+        <a class="card-link" href="${c.url}" target="_blank" rel="noopener">${EXT_ICON} Website</a>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+buildTags();
+render();
+</script>
+</body>
+</html>
