@@ -159,6 +159,22 @@
 
   select:focus { border-color: var(--red); }
 
+  .select-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .select-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    line-height: 1;
+    padding-left: 2px;
+  }
+
   .reset-btn {
     height: 37px; padding: 0 14px;
     border: 1px solid var(--border-strong);
@@ -344,14 +360,20 @@
       <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
       <input type="text" id="search" placeholder="Search name, company, keyword…" oninput="render()" autocomplete="off" />
     </div>
-    <select id="biz" onchange="render()">
-      <option value="">All business types</option>
-      <option>B2B</option><option>B2C</option><option>B2B2C</option>
-    </select>
-    <select id="stage" onchange="render()">
-      <option value="">All stages</option>
-      <option>Pre-seed</option><option>Seed</option><option>Series A</option>
-    </select>
+    <div class="select-wrap">
+      <label class="select-label">Business type</label>
+      <select id="biz" onchange="render()">
+        <option value="">All</option>
+        <option>B2B</option><option>B2C</option><option>B2B2C</option>
+      </select>
+    </div>
+    <div class="select-wrap">
+      <label class="select-label">Last round of funding</label>
+      <select id="stage" onchange="render()">
+        <option value="">All</option>
+        <option>Pre-seed</option><option>Seed</option><option>Series A</option><option>Series C</option>
+      </select>
+    </div>
     <button class="reset-btn" onclick="resetAll()">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       Reset
