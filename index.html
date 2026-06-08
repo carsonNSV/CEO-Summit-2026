@@ -387,7 +387,10 @@ const SECTOR_MAP = {
   "Travel & Mobility":"Travel & Mobility","Travel":"Travel & Mobility","Mobility":"Travel & Mobility","Automotive":"Travel & Mobility","Hospitality":"Travel & Mobility",
 };
 
-const BUCKET_ORDER = ["AI / ML","FinTech","SaaS","PropTech","Health & Life Sciences","AgTech / FoodTech","MarTech","Marketplace","IoT / Hardware","Future of Work","Climate & Sustainability","Travel & Mobility"];
+const BUCKET_ORDER = ["AI / ML","FinTech","SaaS","PropTech","Health & Life Sciences","AgTech / FoodTech","MarTech","Marketplace","IoT / Hardware","Future of Work","Climate & Sustainability","Travel & Mobility"  {name:"David Rabie",company:"Tovala",url:"https://www.tovala.com",li:"https://www.linkedin.com/in/davidrabie/",oneliner:"Smart oven and meal service that puts restaurant-quality meals on the table in under 12 minutes.",hq:"Chicago, IL",stage:"Series C",rawSectors:["AgTech / FoodTech","IoT / Hardware","DTC"],biz:"B2C"},
+  {name:"Schuyler Weiss",company:"Light Frame",url:"https://www.lightframe.tech",li:"https://www.linkedin.com/in/schuyler-weiss-86669231/",oneliner:"Modern core banking solution for private wealth managers.",hq:"Providence, RI",stage:"Pre-seed",rawSectors:["FinTech","WealthTech","SaaS"],biz:"B2B"},
+  {name:"Trip Edwards",company:"Vinny",url:"https://getvinny.com",li:"https://www.linkedin.com/in/tripedwards/",oneliner:"SaaS-enabled marketplace for new and aftermarket RV parts.",hq:"Austin, TX",stage:"Pre-seed",rawSectors:["Marketplace","Automotive","SaaS"],biz:"B2B"},
+];
 
 function mapSectors(raw) {
   const seen = new Set(), out = [];
@@ -399,7 +402,7 @@ const RAW = [
   {name:"Alex Segura",company:"Showdrop",url:"https://www.showdrop.com",li:"https://www.linkedin.com/in/alex-segura-16939b9/",oneliner:"Lets DTC brands enter physical retail 10x faster and cheaper.",hq:"Chicago, IL",stage:"Seed",rawSectors:["MarTech","Commerce","HaaS"],biz:"B2B, B2B2C"},
   {name:"Andrew Penner",company:"Milo",url:"https://www.mymilo.ai",li:"https://www.linkedin.com/in/aepenner/",oneliner:"AI-powered mortgage monitoring for real estate lenders.",hq:"Hartford, CT",stage:"Pre-seed",rawSectors:["AI / ML","Mortgage","PropTech"],biz:"B2B"},
   {name:"Bert Vandereydt",company:"Nammu",url:"https://www.nammu.ai",li:"https://www.linkedin.com/in/bertvandereydt/",oneliner:"AI platform helping food distributors boost profits and cut waste.",hq:"Boston, MA",stage:"Pre-seed",rawSectors:["AgTech / FoodTech","AI / ML","SaaS"],biz:"B2B"},
-  {name:"Bryan Wilcox",company:"RecordLens",url:"https://recordlens.com",li:"https://www.linkedin.com/in/bryanwilcox/",oneliner:"AI planning and operating system for infrastructure construction.",hq:"Valparaiso, IN",stage:"Pre-seed",rawSectors:["Construction","AI / ML","SaaS"],biz:"B2B"},
+
   {name:"Dan Brunner",company:"Market Wagon",url:"https://www.marketwagon.com",li:"https://www.linkedin.com/in/brunnerdaniel/",oneliner:"Online farmers market connecting consumers with local producers.",hq:"Indianapolis, IN",stage:"Series A",rawSectors:["AgTech / FoodTech","Marketplace","eCommerce"],biz:"B2C, B2B2C"},
   {name:"David García",company:"Digitt",url:"https://www.digitt.com",li:"https://www.linkedin.com/in/david-garc%C3%ADa-aceves-17a39477/",oneliner:"The SoFi of Latin America — lower-interest loans for prime borrowers.",hq:"Guadalajara, MX",stage:"Series A",rawSectors:["FinTech","Consumer Lending","BNPL"],biz:"B2B2C"},
   {name:"David Rogove",company:"Maestro",url:"https://www.maestrotech.ai",li:"https://www.linkedin.com/in/davidrogove/",oneliner:"AI infrastructure platform for mortgage brokerages.",hq:"Miami, FL",stage:"Pre-seed",rawSectors:["AI / ML","FinTech","Automation"],biz:"B2B"},
